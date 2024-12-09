@@ -1,7 +1,9 @@
+//grabs the connect function from the database file
 import DB_Connect from "./config/database.js";
 
 //Attempts to authenticate a connection
 try {
+    //after connection, execute the follwing statements: 
     await DB_Connect.execute(
         `
         CREATE TABLE users(
@@ -25,8 +27,6 @@ try {
     );
     console.log('Connection has been established successfully.');
 } 
-
-// FOREIGN KEY (account_id) REFERENCES accounts(account_id) );
 
 catch (error) {
     // When/If an error is caught, an error message will display
